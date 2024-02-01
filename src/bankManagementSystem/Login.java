@@ -2,8 +2,14 @@ package bankManagementSystem;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class Login extends JFrame{
+public class Login extends JFrame implements ActionListener {
+
+    JButton login, clear, signup;
+    JTextField cardTextField;
+    JPasswordField pinTextField;
 
     Login() {
 
@@ -29,9 +35,10 @@ public class Login extends JFrame{
         cardno.setBounds(120,150,150,30);
         add(cardno);
 
-        JTextField cardTextFeild = new JTextField();
-        cardTextFeild.setBounds(300,150,250,30);
-        add(cardTextFeild);
+        cardTextField = new JTextField();
+        cardTextField.setBounds(300,150,250,40);
+        cardTextField.setFont(new Font("Arial", Font.BOLD, 14));
+        add(cardTextField);
 
         //enter the pin
         JLabel pin = new JLabel("PIN:");
@@ -39,15 +46,37 @@ public class Login extends JFrame{
         pin.setBounds(120,230,400,30);
         add(pin);
 
-        JTextField pinTextField = new JTextField();
-        pinTextField.setBounds(300,220,250,30);
+        pinTextField = new JPasswordField();
+        pinTextField.setBounds(300,230,250,40);
+        pinTextField.setFont(new Font("Arial", Font.BOLD, 14));
         add(pinTextField);
 
-        JButton login = new JButton("SIGN IN");
-        login.setBounds(300,350,100,30);
-        //login.setBackground(Color.BLACK);
-        //login.setForeground(Color.WHITE);
+        login = new JButton("SIGN IN");
+        login.setBounds(300,300,120,35);
+        login.setBackground(Color.BLACK);
+        login.setOpaque(true);
+        login.setBorderPainted(false);
+        login.setForeground(Color.WHITE);
+        login.addActionListener(this);
         add(login);
+
+        clear = new JButton("CLEAR");
+        clear.setBounds(430,300,120,35);
+        clear.setBackground(Color.BLACK);
+        clear.setOpaque(true);
+        clear.setBorderPainted(false);
+        clear.setForeground(Color.WHITE);
+        clear.addActionListener(this);
+        add(clear);
+
+        signup = new JButton("SIGN UP");
+        signup.setBounds(300,350,250,35);
+        signup.setBackground(Color.BLACK);
+        signup.setOpaque(true);
+        signup.setBorderPainted(false);
+        signup.setForeground(Color.WHITE);
+        signup.addActionListener(this);
+        add(signup);
 
         //background colour
         getContentPane().setBackground(Color.WHITE);
@@ -57,6 +86,17 @@ public class Login extends JFrame{
         //to show the frame
         setVisible(true);
         setLocation(350,200);
+    }
+
+    public void actionPerformed(ActionEvent ae){
+        if (ae.getSource() == clear){
+            cardTextField.setText("");
+            pinTextField.setText("");
+        } else if (ae.getSource() == login){
+
+        } else if (ae.getSource() == signup){
+
+        }
     }
 
     public static void main(String[] args) {
