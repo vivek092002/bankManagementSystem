@@ -21,6 +21,16 @@ public class signUpOne extends JFrame {
         formno.setBounds(140,20, 600,40);
         add(formno);
 
+        JLabel personalDetails = new JLabel("Page 1 : Personal Details");
+        personalDetails.setFont(new Font("Raleway", Font.BOLD, 22));
+        personalDetails.setBounds(290,80, 400, 30);
+        add(personalDetails);
+
+        JLabel name = new JLabel("Name : ");
+        name.setFont(new Font("Raleway", Font.BOLD, 20));
+        name.setBounds(100,140,100,30);
+        add(name);
+
         getContentPane().setBackground(Color.WHITE);
 
         setSize(850, 800);
