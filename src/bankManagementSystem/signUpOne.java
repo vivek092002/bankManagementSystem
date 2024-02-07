@@ -169,6 +169,7 @@ public class signUpOne extends JFrame {
 
         setSize(850, 800);
         setLocation(350, 10);
+        setBackground(Color.GRAY);
         setVisible(true);
     }
 
